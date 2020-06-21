@@ -1,0 +1,111 @@
+// Settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Variables
+$burgandyColor: #7d182f;
+$greenColor: #33b75c;
+
+// Jab Progress Bar
+
+.player__progress {
+    background: black;
+    width: 100%;
+}
+
+.player__bar {
+    height: 6px;
+    width: 0%;
+    background: $greenColor;
+}
+
+// Jab Player
+
+.jab__player {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background: linear-gradient(to bottom, $burgandyColor, black);
+    color: white;
+
+    .playinfo {
+        text-align: center;
+         
+        * {
+            margin: 0.5rem;
+        }
+
+        .playinfo__btn {
+            background: $greenColor;
+            color: white;
+            padding: 0.5rem 1.8rem;
+            border: 1px solid black;
+            border-radius: 15px;
+            outline: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .playlist {
+        .playlist__list {
+            list-style-type: none;
+        }
+    }
+
+}
+
+// Playlist
+
+.playlist__song {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 1rem;
+    
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+
+    .song__left {
+        display: flex;
+
+        .fas {
+            margin-right: 1rem;
+        }
+    }
+
+    .song__duration {
+        justify-self: end;
+    }
+}
+
+//Classes
+
+.playlist__song--active {
+    background: rgba(0,0,0,0.3);
+}
+
+.playlist__icon--active {
+    color: $greenColor;
+}
+
+// Responsiveness
+
+@media (min-height: 1000px) {
+    html, body, .container, .jab__player {
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .jab__player {
+        display: flex;
+        flex-direction: column;
+    }
+}
